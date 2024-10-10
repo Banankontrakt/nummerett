@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalon Lobby</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"], .form-group input[type="password"], .form-group input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .lobby-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .player-count {
+            font-size: 24px;
+            color: #007BFF;
+        }
+
+        .waiting {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d9534f;
+        }
+
+        .waiting ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .waiting ul li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Välkommen till Avalon Lobby</h1>
+
+        <!-- Inloggningsformulär -->
+        <div id="login-section">
+            <h2>Logga in</h2>
+            <div class="form-group">
+                <label for="username">Användarnamn</label>
+                <input type="text" id="username" placeholder="Skriv ditt användarnamn">
+            </div>
+            <div class="form-group">
+                <label for="password">Lösenord</label>
+                <input type="password" id="password" placeholder="Skriv ditt lösenord">
+            </div>
+            <div class="form-group">
+                <button onclick="login()">Logga in</button>
+            </div>
+        </div>
+
+        <!-- Skapa lobby och välj antal deltagare -->
+        <div id="lobby-creation" style="display: none;">
+            <h2>Skapa Lobby</h2>
+            <div class="form-group">
+                <label for="playerCount">Välj antal spelare (5-10)</label>
+                <input type="number" id="playerCount" min="5" max="10" value="5">
+            </div>
+            <div class="form-group">
+                <button onclick="createLobby()">Skapa Lobby</button>
+            </div>
+
+            <!-- Visa antal spelare som ansluter -->
+            <div class="lobby-info">
+                <p>Spelare anslutna:</p>
+                <p class="player-count" id="playerCounter">0/5</p>
+            </div>
+        </div>
+
+        <!-- Väntar på andra spelare -->
+        <div id="waiting-section" style="display: none;">
+            <h2>Väntar på andra spelare...</h2>
+            <div class="waiting">
+                <ul id="playerList">
+                    <!-- Här kommer namnen på anslutna spelare -->
+                </ul>
+                <p>Väntar på fler spelare...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="loggalobby.js"></script>
+
+</body>
+</html>
