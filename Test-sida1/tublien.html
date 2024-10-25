@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="\styleing-css\tublien.css">
+</head>
+<body>
+     <div class="card">
+        <img src="\bilder\nyahenningbygg1.jpg" alt="Image" class="card-image">
+        <div class="card-content">
+        <h3 class="card-title">Henningbygg</h3>
+        <p class="card-description">Vi tillhandahåller byggtjänster i stockholmsområdet</p>
+        <div class="btn-box"><button class="btn" onclick="myFunction()">Open Popup</button></div>
+        </div>
+    </div> 
+
+    <div class="container" id="myPopup">
+        <div class="sub-container">
+            <span class="close" onclick="myFunction()">X</span>
+            <div class="image-box">
+            <img class="img" src="\bilder\nyahenningbygg1.jpg">
+        </div>
+        <div class="details">
+            <span class="title">Kontakt</span><br>
+            <span class="desc">Vänligen fyll i namn och email</span>
+            <form>
+                <input type="test" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <button class="btn">Skicka</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="\script-js\tublien.js"></script>
+</body>
+</html>
