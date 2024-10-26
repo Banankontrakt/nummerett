@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  overflow: hidden;
+}
+
+.card{
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    height: 400px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10PX;
+    position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+  --angle: 0deg
+  }
+  to{
+  --angle: 360deg
+  }
+}
+
+
+/* Bilden i kortet */
+.card-image {
+    width: 100%;                   /* Bildens bredd fyller kortet */
+    height: 200px;                 /* Bildens höjd */
+    object-fit: cover;             /* Anpassar bilden för att fylla kortet utan att förvrängas */
+  }
+
+  /* Innehållet i kortet */
+.card-content {
+    padding: 15px;                 /* Utrymme inuti kortet */
+  }
+
+  /* Titeln på kortet */
+.card-title {
+    font-size: 1.5em;
+    margin: 0 0 5px 0;            /* Utrymme under titeln */
+    color: #333;                   /* Textfärg */
+  }
+
+  /* Beskrivningen på kortet */
+.card-description {
+    font-size: 1em;
+    margin-bottom: 15px;           /* Utrymme under beskrivningen */
+    color: #666;                   /* Textfärg */
+  }
+
+  /* Knappen i kortet */
+.card-button {
+    display: inline-block;         /* Gör knappen klickbar */
+    padding: 10px 15px;            /* Utrymme i knappen */
+    background-color: #007BFF;     /* Knappens bakgrundsfärg */
+    color: #fff;                   /* Textfärgen på knappen */
+    text-decoration: none;         /* Ingen understrykning */
+    border-radius: 5px;            /* Rundade hörn på knappen */
+    transition: background-color 0.3s; /* Animering på bakgrundsfärgen vid hover */
+  }
+  
+  /* Hover-effekt för knappen */
+  .card-button:hover {
+    background-color: #0056b3;     /* Ändrar färgen på knappen vid hover */
+  }

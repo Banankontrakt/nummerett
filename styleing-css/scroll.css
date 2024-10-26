@@ -1,0 +1,56 @@
+@keyframes scrolling {
+    to {
+        transform: translate(calc(-50%));
+    }
+}
+
+
+  .scroll-watcher {
+    height: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: lime;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll(y);
+
+  }
+  @keyframes scroll-watcher {
+    to {scale: 1 1; }
+  }
+
+  .article-header {
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow-x: clip;
+    padding-block: 7rem;
+    margin-block-end: 3rem;
+  }
+
+  .header-image {
+    grid-column: 1 / -1 !important;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  article > img {
+    animation: fade-in linear;
+    animation-timeline: view(250px);
+    animation-range-start: 500px;
+    animation-range-end: 700px;
+
+  }
+
+  @keyframes fade-in {
+    from {scale: .8; opacity: 0;}
+    to {scale: 1; opacity: 1;}
+  }

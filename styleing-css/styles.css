@@ -1,0 +1,28 @@
+body{
+    min-height: 800px;
+    border: 8px solid black;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    
+}
+
+.box{
+    flex-shrink: 1;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    background-color: #0071FF;
+    font-size: 40pt;
+}
+@media(max-width:575px){
+    body{
+        flex-wrap: wrap;
+    }
+}
