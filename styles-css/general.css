@@ -34,6 +34,12 @@ body {
     .container {
         flex-direction: column; /* Vertikal layout */
         justify-content: center;
+        height: auto; /* Gör höjden dynamisk */
+        gap:10px;
+    }
+
+    .text-content, .image-content {
+        width: 100%; /* Gör varje element lika brett som containern */
     }
 }
     /*Detta är nyTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT ned*/
