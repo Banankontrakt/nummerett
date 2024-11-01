@@ -30,7 +30,7 @@ body {
     height: 100vh auto;
 }
 /* Lägger elementen vertikalt på små skärmar */
-@media (max-width: 600px) {
+@media (max-width: 375px) {
     .container {
         flex-direction: column; /* Vertikal layout */
         justify-content: center;
