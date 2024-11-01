@@ -29,7 +29,7 @@ body {
     height: 100vh auto;
 }
 /* Lägger elementen vertikalt på små skärmar */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .container {
         flex-direction: column; /* Lodrät layout */
         height: auto; /* Låt höjden anpassas automatiskt */
