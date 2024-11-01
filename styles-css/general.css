@@ -37,7 +37,7 @@ body {
     }
 
     .text-content, .image-content {
-        min-width: 75%; /* Låter elementen ta upp hela bredden */
+        min-width: 100%; /* Låter elementen ta upp hela bredden */
     }
 }
 .container:nth-child(odd) {
