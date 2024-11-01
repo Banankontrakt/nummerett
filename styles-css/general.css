@@ -1,0 +1,122 @@
+:root {
+    --ff: 'Times New Roman', Times, serif;
+    --p: 18px/22px var(--ff);
+    --p1: 24px/30px var(--ff);
+    --h1: bold 64px/72px var(--ff);
+    --colorbody: #2a2a2b;
+    --colora: #b4901e;
+    --colora2: #7f3004;
+    --colorp: #f7efd3;
+    --colors: #666669;
+    --shadow: #00000030 0px 0px 10px 0px;
+    --transition: 0.3s ease-in-out;
+}
+
+body {
+    font: var(--p);
+    background-color: var(--colorbody);
+    color: var(--colors);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 100px auto;
+    height: 100vh auto;
+}
+
+.container:nth-child(odd) {
+    flex-direction: row; /* Text till vänster, bild till höger */
+}
+
+.container:nth-child(even) {
+    flex-direction: row-reverse; /* Text till höger, bild till vänster */
+}
+
+.text-content, .image-content {
+    flex: 1;
+    min-width: 400px;
+}
+/*                här   ner                     */
+.text-content{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.text-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text-content.fade-out {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+.image-content{
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.image-content.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.image-content.fade-out {
+    opacity: 0;
+    transform: scale(1.1);
+}
+/*                här upp                        */
+h1 {
+    font: var(--h1);
+    color: var(--colora);
+    margin-bottom: 80px;
+    line-height: 1.5;
+    margin-left: 10px;
+}
+h2 {
+    font: var(--p1);
+    color: var(--colorp);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    
+}
+p {
+    font: var(--p);
+    margin-left: 10px;
+    color: var(--colors)
+}
+
+a{
+    background: var(--colora);
+    color: var(--colorbody);
+    padding: 20px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    min-width: 100px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.secondary-btn {
+    background: none;
+    border: solid 2px var(--colora);
+    color: var(--colora);
+}
+img {
+    width: 100%;
+    border-radius: 10px;    
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
