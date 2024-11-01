@@ -28,7 +28,18 @@ body {
     margin: 100px auto;
     height: 100vh auto;
 }
+/* Lägger elementen vertikalt på små skärmar */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Lodrät layout */
+        height: auto; /* Låt höjden anpassas automatiskt */
+        margin: 50px auto; /* Justera marginal för bättre spacing */
+    }
 
+    .text-content, .image-content {
+        min-width: 100%; /* Låter elementen ta upp hela bredden */
+    }
+}
 .container:nth-child(odd) {
     flex-direction: row; /* Text till vänster, bild till höger */
 }
