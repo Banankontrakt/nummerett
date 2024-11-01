@@ -35,13 +35,24 @@ body {
         flex-direction: column; /* Vertikal layout */
         justify-content: center;
         height: auto; /* Gör höjden dynamisk */
-        gap:10px;
+        gap: 10px;
+        padding: 15px; /* Minskar padding för små skärmar */
+        margin: 20px auto; /* Justerar margin */
     }
 
     .text-content, .image-content {
         width: 100%; /* Gör varje element lika brett som containern */
     }
+
+    /* Tar bort order-inställningen för att behålla vertikal layout */
+    .container:nth-child(odd) .text-content,
+    .container:nth-child(odd) .image-content,
+    .container:nth-child(even) .text-content,
+    .container:nth-child(even) .image-content {
+        order: initial;
+    }
 }
+
     /*Detta är nyTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT ned*/
 .container:nth-child(odd) .text-content {
     order: 1;
