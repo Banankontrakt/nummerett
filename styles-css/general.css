@@ -20,6 +20,7 @@ body {
 
 .container {
     display: flex;
+    justify-content: center; /* Centrerar elementen horisontelltNYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY */
     align-items: center;
     gap: 30px;
     padding: 30px;
@@ -29,25 +30,27 @@ body {
     height: 100vh auto;
 }
 /* Lägger elementen vertikalt på små skärmar */
-@media (max-width: 375px) {
+@media (max-width: 600px) {
     .container {
-        width: auto;
-        height: auto; /* Låt höjden anpassas automatiskt */
-        margin: 50px auto; /* Justera marginal för bättre spacing */
-    }
-
-    .text-content, .image-content {
-        min-width: 100%; /* Låter elementen ta upp hela bredden */
+        flex-direction: column; /* Vertikal layout */
+        justify-content: center;
     }
 }
-.container:nth-child(odd) {
-    flex-direction: row; /* Text till vänster, bild till höger */
+    /*Detta är nyTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT ned*/
+.container:nth-child(odd) .text-content {
+    order: 1;
+}
+.container:nth-child(odd) .image-content {
+    order: 2;
 }
 
-.container:nth-child(even) {
-    flex-direction: row-reverse; /* Text till höger, bild till vänster */
+.container:nth-child(even) .text-content {
+    order: 2;
 }
-
+.container:nth-child(even) .image-content {
+    order: 1;
+}
+/*Detta är nyTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT upp*/
 .text-content, .image-content {
     flex: 1;
     min-width: 400px;
