@@ -31,7 +31,7 @@ body {
 /* Lägger elementen vertikalt på små skärmar */
 @media (max-width: 600px) {
     .container {
-        
+        flex-direction: column; /* Ändrar layout till vertikal */
         height: auto; /* Låt höjden anpassas automatiskt */
         margin: 50px auto; /* Justera marginal för bättre spacing */
     }
