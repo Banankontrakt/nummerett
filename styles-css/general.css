@@ -75,7 +75,7 @@ body {
 /*Detta är nyTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT upp*/
 .text-content, .image-content {
     flex: 1;
-    min-width: 300px; /*ändad från 400 till 375 som media max */
+    min-width: 300px; /*ändad från 400 till 300 som media max problemet med fitting löst */
 }
 /*                här   ner                     */
 .text-content{
