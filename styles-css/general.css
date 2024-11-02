@@ -36,7 +36,8 @@ body {
 @media (max-width: 375px) {
     .container {
         flex-direction: column; /* Vertikal layout */
-        justify-content: center;
+        align-items: center; /*nyyyy 11/2 */
+        justify-content: center; 
         height: auto; /* Gör höjden dynamisk */
         gap: 10px;
         padding: 15px; /* Minskar padding för små skärmar */
