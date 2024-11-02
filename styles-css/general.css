@@ -38,6 +38,7 @@ body {
         flex-direction: column; /* Vertikal layout */
         align-items: center; /*nyyyy 11/2 */
         justify-content: center; 
+        align-content: space-evenly; /*nyyy 11/2*/
         height: auto; /* Gör höjden dynamisk */
         gap: 10px;
         padding: 15px; /* Minskar padding för små skärmar */
