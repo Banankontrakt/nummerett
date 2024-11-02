@@ -74,7 +74,7 @@ body {
 /*Detta är nyTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT upp*/
 .text-content, .image-content {
     flex: 1;
-    min-width: 400px;
+    min-width: 375px; /*ändad från 400 till 375 som media max */
 }
 /*                här   ner                     */
 .text-content{
