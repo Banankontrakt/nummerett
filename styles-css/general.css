@@ -20,8 +20,9 @@ body {
 
 .container {
     display: flex;
-    justify-content: center; /* Centrerar elementen horisontelltNYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY */
     align-items: center;
+    justify-content: center; /*nyyyy 11/2 */
+    box-sizing: border-box; /*nyyyyy 11/2 */
     gap: 30px;
     padding: 30px;
     flex-wrap: wrap;
