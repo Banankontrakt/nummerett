@@ -23,6 +23,8 @@ body {
     align-items: center;
     justify-content: center; /*nyyyy 11/2 */
     box-sizing: border-box; /*nyyyyy 11/2 */
+    -webkit-box-sizing:border-box; /*ny 11/2*/
+    -moz-box-sizing:border-box; /*ny 11/2*/
     gap: 30px;
     padding: 30px;
     flex-wrap: wrap;
