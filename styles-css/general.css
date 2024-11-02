@@ -41,7 +41,7 @@ body {
         height: auto; /* Gör höjden dynamisk */
         gap: 10px;
         padding: 15px; /* Minskar padding för små skärmar */
-        margin: 20px auto; /* Justerar margin */
+        margin: 0px auto; /* Justerar margin */
     }
 
     .text-content, .image-content {
