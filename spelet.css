@@ -1,0 +1,217 @@
+:root {
+    --ff: 'Times New Roman', Times, serif;
+    --p: 18px/22px var(--ff);
+    --p1: 24px/30px var(--ff);
+    --h1: bold 64px/72px var(--ff);
+    --colorbody: #2a2a2b;
+    --colora: #b4901e;
+    --colora2: #7f3004;
+    --colorp: #f7efd3;
+    --colors: #666669;
+    --shadow: #00000030 0px 0px 10px 0px;
+    --transition: 0.3s ease-in-out;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: url(/public/bilderavalon/mysticriver.jpg);
+    background-size: 100% 100%; /* Gör bilden lika stor som elementet */
+    background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
+    background-size: cover;
+    background-position: center;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: var(--shadow);  
+}
+
+.player-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--shadow);
+    background-color: var(--colors);
+}
+
+label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.follow-checkbox {
+    margin-bottom: 10px;
+}
+
+.player {
+    border: 1px solid #333;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    cursor: pointer;
+    text-align: center;
+}
+
+.vote-buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.vote-yes, .vote-no {
+    font-size: 0.8em;
+}
+.final-decision-buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.final-yes, .final-no {
+    font-size: 0.8em;
+}
+
+
+/* Placering av spelare och deras tillhörande kryssrutor */
+.player-container:nth-child(1) { bottom: 20px; left: 20px; }
+.player-container:nth-child(2) { top: 50%; left: 20px; transform: translateY(-50%); }
+.player-container:nth-child(3) { top: 20px; left: 50%; transform: translateX(-50%); }
+.player-container:nth-child(4) { top: 50%; right: 20px; transform: translateY(-50%); }
+.player-container:nth-child(5) { bottom: 20px; right: 20px; }
+
+.symbol {
+    width: 20px;
+    height: 20px;
+    background-color: #FF6347;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transition: 0.5s;
+}
+
+.hidden-role {
+    color: #ccc;
+    font-style: italic;
+    background-image: url(/public/bilderavalon/backsidecard.jpg);
+    background-size: 100% 100%; /* Gör bilden lika stor som elementet */
+    background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
+}
+
+/* Centrera uppdragscirklarna både horisontellt och vertikalt */
+#quest-container {
+    display: flex;
+    flex-direction: row; /* Gör att omröstningsräknaren hamnar under quest-cirklarna */
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--shadow);
+}
+
+.quest-circles {
+    display: flex;
+    flex-direction: row; /* Håller quest-cirklarna i en vågrät rad */
+    gap: 20px;
+    box-shadow: var(--shadow);
+}
+
+
+.quest-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    background-color: #999; /* Startfärg */
+    transition: background-color 0.3s;
+}
+
+#vote-counter {
+    position: absolute;
+    top: 100px;
+    transform: translateX(0%); /* Justera horisontell centrering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;       /* Gör rektangeln bred */
+    height: 75px;      /* Ökad höjd för rektangeln */
+    background-color: #333; /* Bakgrundsfärg för omröstningsräknaren */
+    border-radius: 10px; /* Gör hörnen lite rundade */
+    padding: 10px;
+    gap: 15px;          /* Mellanrum mellan cirklarna */
+}
+
+.vote-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc; /* Startfärg */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+}
+
+.vote-circle.filled {
+    background-color: #8b0000; /* Mörkröd färg när omröstningen blir "Nej" */
+}
+
+#vote5 {
+    background-color: rgba(139, 0, 0, 0.5); /* Röd-transparent färg för femte cirkeln */
+}
+
+/* Färger för omröstningsresultat */
+.quest-circle.success {
+    background-color: #add8e6; /* Ljusblå vid "Klart" */
+}
+
+.quest-circle.fail {
+    background-color: #8b0000; /* Mörkröd vid "Inte Klart" */
+}
+
+/* Stil för aktiv quest-cirkel */
+.quest-circle.active {
+    border: 3px solid #ff6347; /* Liknande stil som symbolen */
+}
+
+.quest-title {
+    font-size: 12px;
+}
+
+.quest-number {
+    font-size: 24px;
+}
+
+/* Vinnarmeddelande-stil */
+#winner-message {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 200px; /* Avstånd mellan meddelandet och cirklarna */
+}
+
+h1 {
+    font: var(--h1);
+    color: var(--colora);
+    margin-bottom: 80px;
+    line-height: 1.5;
+    margin-left: 10px;
+}

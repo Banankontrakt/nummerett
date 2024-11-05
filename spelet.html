@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rollfördelningsspel</title>
+    <link rel="stylesheet" href="/public/styles-css/spelet.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Rollfördelningsspel</h1>
+        <div id="players">
+            <div class="player-container">
+                <label for="checkbox1">Följa med?</label>
+                <input type="checkbox" id="checkbox1" class="follow-checkbox">
+                <div class="player" id="player1">Spelare 1</div>
+                <div class="vote-buttons">
+                    <button class="vote-yes" data-player="1">Ja</button>
+                    <button class="vote-no" data-player="1">Nej</button>
+                </div>
+                <div class="final-decision-buttons">
+                    <button class="final-yes" data-player="1" disabled>Klart</button>
+                    <button class="final-no" data-player="1" disabled>Inte Klart</button>
+                </div>
+            </div>
+            <!-- Samma layout för spelare 2-5 -->
+            <div class="player-container">
+                <label for="checkbox2">Följa med?</label>
+                <input type="checkbox" id="checkbox2" class="follow-checkbox">
+                <div class="player" id="player2">Spelare 2</div>
+                <div class="vote-buttons">
+                    <button class="vote-yes" data-player="2">Ja</button>
+                    <button class="vote-no" data-player="2">Nej</button>
+                </div>
+                <div class="final-decision-buttons">
+                    <button class="final-yes" data-player="2" disabled>Klart</button>
+                    <button class="final-no" data-player="2" disabled>Inte Klart</button>
+                </div>
+            </div>
+            <!-- Fortsätt för spelare 3-5 -->
+            <!-- Spelare 3 -->
+            <div class="player-container">
+                <label for="checkbox3">Följa med?</label>
+                <input type="checkbox" id="checkbox3" class="follow-checkbox">
+                <div class="player" id="player3">Spelare 3</div>
+                <div class="vote-buttons">
+                    <button class="vote-yes" data-player="3">Ja</button>
+                    <button class="vote-no" data-player="3">Nej</button>
+                </div>
+                <div class="final-decision-buttons">
+                    <button class="final-yes" data-player="3" disabled>Klart</button>
+                    <button class="final-no" data-player="3" disabled>Inte Klart</button>
+                </div>
+            </div>
+            <!-- Spelare 4 -->
+            <div class="player-container">
+                <label for="checkbox4">Följa med?</label>
+                <input type="checkbox" id="checkbox4" class="follow-checkbox">
+                <div class="player" id="player4">Spelare 4</div>
+                <div class="vote-buttons">
+                    <button class="vote-yes" data-player="4">Ja</button>
+                    <button class="vote-no" data-player="4">Nej</button>
+                </div>
+                <div class="final-decision-buttons">
+                    <button class="final-yes" data-player="4" disabled>Klart</button>
+                    <button class="final-no" data-player="4" disabled>Inte Klart</button>
+                </div>
+            </div>
+            <!-- Spelare 5 -->
+            <div class="player-container">
+                <label for="checkbox5">Följa med?</label>
+                <input type="checkbox" id="checkbox5" class="follow-checkbox">
+                <div class="player" id="player5">Spelare 5</div>
+                <div class="vote-buttons">
+                    <button class="vote-yes" data-player="5">Ja</button>
+                    <button class="vote-no" data-player="5">Nej</button>
+                </div>
+                <div class="final-decision-buttons">
+                    <button class="final-yes" data-player="5" disabled>Klart</button>
+                    <button class="final-no" data-player="5" disabled>Inte Klart</button>
+                </div>
+            </div>
+        
+            <!-- Vinnarmeddelande -->
+        <div id="winner-message"></div>   
+        
+        <!-- Uppdragscirklar -->
+        <div id="quest-container">
+            <!-- Quest-cirklar -->
+            <div class="quest-circle" id="circle1">
+                <span class="quest-title">Quest 1</span>
+                <span class="quest-number">2</span>
+            </div>
+            <div class="quest-circle" id="circle2">
+                <span class="quest-title">Quest 2</span>
+                <span class="quest-number">3</span>
+            </div>
+            <div class="quest-circle" id="circle3">
+                <span class="quest-title">Quest 3</span>
+                <span class="quest-number">2</span>
+            </div>
+            <div class="quest-circle" id="circle4">
+                <span class="quest-title">Quest 4</span>
+                <span class="quest-number">3</span>
+            </div>
+            <div class="quest-circle" id="circle5">
+                <span class="quest-title">Quest 5</span>
+                <span class="quest-number">3</span>
+            </div>
+        
+            <!-- Omröstningsräknare (flyttad in i quest-container) -->
+            <div id="vote-counter">
+                <div class="vote-circle" id="vote1">1</div>
+                <div class="vote-circle" id="vote2">2</div>
+                <div class="vote-circle" id="vote3">3</div>
+                <div class="vote-circle" id="vote4">4</div>
+                <div class="vote-circle" id="vote5">5</div>
+            </div>
+        </div>
+
+
+        
+        <button id="assignRolesBtn">Tilldela Roller</button>
+        <button id="moveSymbolBtn">Flytta Symbolen</button>
+        
+        <p id="message"></p>
+    </div>
+    <script src="/public/scripts-js/spelet.js"></script>
+</body>
+</html>
