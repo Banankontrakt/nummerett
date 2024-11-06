@@ -15,7 +15,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-image: url(/public/bilderavalon/mysticriver.jpg);
+    background-image: url(bilderavalon/mysticriver.jpg);
     background-size: 100% 100%; /* Gör bilden lika stor som elementet */
     background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
     background-size: cover;
@@ -100,7 +100,7 @@ label {
 .hidden-role {
     color: #ccc;
     font-style: italic;
-    background-image: url(/public/bilderavalon/backsidecard.jpg);
+    background-image: url(bilderavalon/backsidecard.jpg);
     background-size: 100% 100%; /* Gör bilden lika stor som elementet */
     background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
 }
