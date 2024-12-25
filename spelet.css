@@ -11,40 +11,81 @@
     --shadow: #00000030 0px 0px 10px 0px;
     --transition: 0.3s ease-in-out;
 }
-
 body {
-    font-family: Arial, sans-serif;
+    font:var(--p);
+    font-family: var(--ff);
+    color: var(--colors);
     margin: 0;
-    background-image: url(bilderavalon/mysticriver.jpg);
+    background-image: url(/public/bilderavalon/mysticriver.jpg);
+    background-color: var(--colorbody);
     background-size: 100% 100%; /* Gör bilden lika stor som elementet */
     background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
     background-size: cover;
     background-position: center;
 }
-
-#game-container {
-    position: relative;
+#grid-container {
+    display: grid;
+    grid-template-rows: 1fr auto auto 2fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     width: 100vw;
     height: 100vh;
-    box-shadow: var(--shadow);  
 }
 
-.player-container {
-    position: absolute;
+#header {
+    grid-column: 1 / 5; /* Sträcker sig över alla fyra kolumner */
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+    background-color: var(--colorbody);
+    border-radius: 10px;
+    height: fit-content;
+}
+h1{
+    font: var(--h1);
+    color: var(--colora);
+    margin: 0 auto;
+    text-align: center;
+    width: auto;
+}
+
+
+
+#quest-bar {
+    grid-column: 1 / 5; /* Täcker hela raden */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+#vote-bar {
+    grid-column: 1 / 5; /* Täcker hela raden */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+#player-grid {
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--colorbody);
+    padding: 10px;
     box-shadow: var(--shadow);
-    background-color: var(--colors);
-}
-
-label {
-    font-size: 0.9em;
-    margin-bottom: 5px;
-}
-
-.follow-checkbox {
-    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .player {
@@ -59,15 +100,46 @@ label {
     text-align: center;
 }
 
+#assignRolesBtn {
+    background: var(--colora);
+    color: var(--colorbody);
+    padding: 20px 40px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: var(--p);
+    border-radius: 10px;
+    min-width: 100px;
+    display: inline-block;
+    margin-top: 20px;
+
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    border: none;
+}
+
 .vote-buttons {
     display: flex;
     gap: 5px;
     margin-top: 10px;
+    
 }
+
+
 
 .vote-yes, .vote-no {
     font-size: 0.8em;
+    background: var(--colora);
+    color: var(--colorbody);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    min-width: 100px;
+    display: inline-block;
+    box-shadow: var(--shadow);
+    border: none;
 }
+
 .final-decision-buttons {
     display: flex;
     gap: 5px;
@@ -76,15 +148,13 @@ label {
 
 .final-yes, .final-no {
     font-size: 0.8em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    min-width: 100px;
+    display: inline-block;
+    box-shadow: var(--shadow);
+    border: none;
 }
-
-
-/* Placering av spelare och deras tillhörande kryssrutor */
-.player-container:nth-child(1) { bottom: 20px; left: 20px; }
-.player-container:nth-child(2) { top: 50%; left: 20px; transform: translateY(-50%); }
-.player-container:nth-child(3) { top: 20px; left: 50%; transform: translateX(-50%); }
-.player-container:nth-child(4) { top: 50%; right: 20px; transform: translateY(-50%); }
-.player-container:nth-child(5) { bottom: 20px; right: 20px; }
 
 .symbol {
     width: 20px;
@@ -92,39 +162,28 @@ label {
     background-color: #FF6347;
     border-radius: 50%;
     position: absolute;
-    top: -10px;
-    right: -10px;
+
     transition: 0.5s;
 }
 
 .hidden-role {
     color: #ccc;
     font-style: italic;
-    background-image: url(bilderavalon/backsidecard.jpg);
+    background-image: url(/public/bilderavalon/backsidecard.jpg);
     background-size: 100% 100%; /* Gör bilden lika stor som elementet */
     background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
 }
 
-/* Centrera uppdragscirklarna både horisontellt och vertikalt */
 #quest-container {
     display: flex;
-    flex-direction: row; /* Gör att omröstningsräknaren hamnar under quest-cirklarna */
+    justify-content: center;
     align-items: center;
     gap: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: var(--shadow);
 }
-
-.quest-circles {
-    display: flex;
-    flex-direction: row; /* Håller quest-cirklarna i en vågrät rad */
-    gap: 20px;
-    box-shadow: var(--shadow);
-}
-
 
 .quest-circle {
     width: 80px;
@@ -141,10 +200,28 @@ label {
     transition: background-color 0.3s;
 }
 
+.quest-title {
+    font-size: 12px;
+}
+
+.quest-number {
+    font-size: 24px;
+}
+
+.quest-circle.success {
+    background-color: #add8e6; /* Ljusblå vid "Klart" */
+}
+
+.quest-circle.fail {
+    background-color: #8b0000; /* Mörkröd vid "Inte Klart" */
+}
+
+/* Markera aktiv omgångscirkel */
+.quest-circle.active {
+    border: 3px solid #ff6347; /* Liknande stil som symbolen */
+}
+
 #vote-counter {
-    position: absolute;
-    top: 100px;
-    transform: translateX(0%); /* Justera horisontell centrering */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,7 +245,6 @@ label {
     font-weight: bold;
     color: black;
 }
-
 .vote-circle.filled {
     background-color: #8b0000; /* Mörkröd färg när omröstningen blir "Nej" */
 }
@@ -177,41 +253,23 @@ label {
     background-color: rgba(139, 0, 0, 0.5); /* Röd-transparent färg för femte cirkeln */
 }
 
-/* Färger för omröstningsresultat */
-.quest-circle.success {
-    background-color: #add8e6; /* Ljusblå vid "Klart" */
+.follow-checkbox {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--colora);
+    border-radius: 6px;
+    background-color: var(--colorbody);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
-.quest-circle.fail {
-    background-color: #8b0000; /* Mörkröd vid "Inte Klart" */
+.follow-checkbox:hover {
+    transform: scale(1.1); /* Gör checkboxen större när du hovrar */
 }
 
-/* Stil för aktiv quest-cirkel */
-.quest-circle.active {
-    border: 3px solid #ff6347; /* Liknande stil som symbolen */
-}
-
-.quest-title {
-    font-size: 12px;
-}
-
-.quest-number {
-    font-size: 24px;
-}
-
-/* Vinnarmeddelande-stil */
-#winner-message {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: green;
-    margin-bottom: 200px; /* Avstånd mellan meddelandet och cirklarna */
-}
-
-h1 {
-    font: var(--h1);
-    color: var(--colora);
-    margin-bottom: 80px;
-    line-height: 1.5;
-    margin-left: 10px;
+.follow-checkbox:checked {
+    background-color: var(--colora);
+    border-color: var(--colora2);
+    box-shadow: 0 0 5px var(--colora); /* Lägg till en ljusglöd när kryssad */
 }
