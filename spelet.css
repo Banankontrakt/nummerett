@@ -16,7 +16,7 @@ body {
     font-family: var(--ff);
     color: var(--colors);
     margin: 0;
-    background-image: url(/public/bilderavalon/mysticriver.jpg);
+    background-image: url(/bilderavalon/mysticriver.jpg);
     background-color: var(--colorbody);
     background-size: 100% 100%; /* Gör bilden lika stor som elementet */
     background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
@@ -169,7 +169,7 @@ h1{
 .hidden-role {
     color: #ccc;
     font-style: italic;
-    background-image: url(/public/bilderavalon/backsidecard.jpg);
+    background-image: url(/bilderavalon/backsidecard.jpg);
     background-size: 100% 100%; /* Gör bilden lika stor som elementet */
     background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
 }
