@@ -1,123 +1,17 @@
 <!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rollfördelningsspel</title>
-    <link rel="stylesheet" href="spelet.css">
-</head>
-<body>
-    <div id="grid-container">
-        <!-- Första raden: Titel och knapp -->
-        <div id="header">
-            <h1>Avanon</h1>
-            <button id="assignRolesBtn">Tilldela Roller</button>
-        </div>
-        
-        <!-- Andra raden: Quest-baren -->
-        <div id="quest-bar">
-            <div class="quest-circle" id="circle1">
-                <span class="quest-title">Quest 1</span>
-                <span class="quest-number">2</span>
-            </div>
-            <div class="quest-circle" id="circle2">
-                <span class="quest-title">Quest 2</span>
-                <span class="quest-number">3</span>
-            </div>
-            <div class="quest-circle" id="circle3">
-                <span class="quest-title">Quest 3</span>
-                <span class="quest-number">2</span>
-            </div>
-            <div class="quest-circle" id="circle4">
-                <span class="quest-title">Quest 4</span>
-                <span class="quest-number">3</span>
-            </div>
-            <div class="quest-circle" id="circle5">
-                <span class="quest-title">Quest 5</span>
-                <span class="quest-number">3</span>
-            </div>
-        </div>
-        
-        <!-- Tredje raden: Vote-baren -->
-        <div id="vote-bar">
-            <div id="vote-counter">
-                <div class="vote-circle" id="vote1">1</div>
-                <div class="vote-circle" id="vote2">2</div>
-                <div class="vote-circle" id="vote3">3</div>
-                <div class="vote-circle" id="vote4">4</div>
-                <div class="vote-circle" id="vote5">5</div>
-            </div>
-        </div>
-        
-        <!-- Fjärde raden: Spelarna -->
-        <div id="player-grid">
-            <div class="player-container" id="player1-container">
-                <label for="checkbox1">Följa med?</label>
-                <input type="checkbox" id="checkbox1" class="follow-checkbox">
-                <div class="player" id="player1">Spelare 1</div>
-                <div class="vote-buttons">
-                    <button class="vote-yes" data-player="1">Ja</button>
-                    <button class="vote-no" data-player="1">Nej</button>
-                </div>
-                <div class="final-decision-buttons">
-                    <button class="final-yes" data-player="1" disabled>Klart</button>
-                    <button class="final-no" data-player="1" disabled>Inte Klart</button>
-                </div>
-            </div>
-            <div class="player-container" id="player2-container">
-                <label for="checkbox2">Följa med?</label>
-                <input type="checkbox" id="checkbox2" class="follow-checkbox">
-                <div class="player" id="player2">Spelare 2</div>
-                <div class="vote-buttons">
-                    <button class="vote-yes" data-player="2">Ja</button>
-                    <button class="vote-no" data-player="2">Nej</button>
-                </div>
-                <div class="final-decision-buttons">
-                    <button class="final-yes" data-player="2" disabled>Klart</button>
-                    <button class="final-no" data-player="2" disabled>Inte Klart</button>
-                </div>
-            </div>
-            <div class="player-container" id="player3-container">
-                <label for="checkbox3">Följa med?</label>
-                <input type="checkbox" id="checkbox3" class="follow-checkbox">
-                <div class="player" id="player3">Spelare 3</div>
-                <div class="vote-buttons">
-                    <button class="vote-yes" data-player="3">Ja</button>
-                    <button class="vote-no" data-player="3">Nej</button>
-                </div>
-                <div class="final-decision-buttons">
-                    <button class="final-yes" data-player="3" disabled>Klart</button>
-                    <button class="final-no" data-player="3" disabled>Inte Klart</button>
-                </div>
-            </div>
-            <div class="player-container" id="player4-container">
-                <label for="checkbox4">Följa med?</label>
-                <input type="checkbox" id="checkbox4" class="follow-checkbox">
-                <div class="player" id="player4">Spelare 4</div>
-                <div class="vote-buttons">
-                    <button class="vote-yes" data-player="4">Ja</button>
-                    <button class="vote-no" data-player="4">Nej</button>
-                </div>
-                <div class="final-decision-buttons">
-                    <button class="final-yes" data-player="4" disabled>Klart</button>
-                    <button class="final-no" data-player="4" disabled>Inte Klart</button>
-                </div>
-            </div>
-            <div class="player-container" id="player5-container">
-                <label for="checkbox5">Följa med?</label>
-                <input type="checkbox" id="checkbox5" class="follow-checkbox">
-                <div class="player" id="player5">Spelare 5</div>
-                <div class="vote-buttons">
-                    <button class="vote-yes" data-player="5">Ja</button>
-                    <button class="vote-no" data-player="5">Nej</button>
-                </div>
-                <div class="final-decision-buttons">
-                    <button class="final-yes" data-player="5" disabled>Klart</button>
-                    <button class="final-no" data-player="5" disabled>Inte Klart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="spelet.js"></script>
-</body>
-</html>
+<html lang="sv"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Avanon – spela tillsammans</title><link rel="stylesheet" href="spelet.css"><link rel="stylesheet" href="styles-css/lobby.css"></head>
+<body><main>
+<header id="header"><h1>Avanon</h1><p>Fem spelare. Två hemliga lag. Ett gemensamt äventyr.</p></header>
+<p id="connection" role="status">Ansluter… Första starten kan ta ungefär en minut.</p><p id="error" role="alert"></p>
+<section id="entry" class="panel"><h2>Samla ditt sällskap</h2><form id="entry-form">
+<label for="name">Ditt spelarnamn</label><input id="name" maxlength="24" autocomplete="nickname" required><button id="create" type="submit">Skapa lobby</button>
+<label for="code">Har du en lobbykod?</label><input id="code" maxlength="6" placeholder="ABC123" autocomplete="off"><button id="join" type="submit">Gå med i lobby</button>
+</form></section>
+<section id="room" hidden><div class="panel"><h2>Lobby <span id="lobby-code"></span></h2><button id="copy">Kopiera lobbykod</button><p id="message" role="status"></p><button id="start" hidden>Starta spelet</button><button id="leave">Lämna lobby</button></div>
+<div class="panel" id="role-panel" hidden><button id="show-role">Visa min roll</button><p id="my-role" hidden></p></div>
+<div id="quest-bar" aria-label="Uppdrag"></div><p id="rejections"></p><div id="player-grid"></div>
+<div class="panel"><p id="instruction"></p><button id="confirm-team" hidden>Föreslå laget</button>
+<div id="voting" hidden><button id="yes">Godkänn laget</button><button id="no">Avvisa laget</button></div>
+<div id="mission" hidden><button id="success">Lyckas med uppdraget</button><button id="fail">Sabotera uppdraget</button></div></div></section>
+<footer>Tre goda och två onda. De onda känner till varandra. Tre lyckade uppdrag ger de goda segern; tre misslyckade uppdrag eller fem avvisade lag i följd ger de onda segern.</footer>
+</main><script src="/socket.io/socket.io.js"></script><script src="spelet.js"></script></body></html>
