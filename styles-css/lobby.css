@@ -1,0 +1,21 @@
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+body { color: #f7efd3; min-height: 100vh; }
+main { max-width: 1120px; margin: auto; padding: 20px; }
+.panel { background: #2a2a2bee; padding: 24px; border: 1px solid #b4901e66; border-radius: 12px; margin: 16px 0; text-align: center; }
+#entry { max-width: 460px; margin: 24px auto; }
+form { display: grid; gap: 14px; text-align: left; }
+input:not([type=checkbox]) { width: 100%; padding: 12px; border: 1px solid #b4901e; border-radius: 6px; font: inherit; }
+button { background: #b4901e; color: #171719; border: 0; border-radius: 7px; padding: 12px 18px; font: inherit; cursor: pointer; margin: 4px; }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, input:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+#lobby-code { letter-spacing: .18em; color: #e4c45b; }
+#connection, #error, #rejections { text-align: center; padding: 8px; background: #2a2a2bdd; border-radius: 6px; }
+#error:empty { display: none; } #error { color: #ffc3c3; }
+#player-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.player-container { color: #f7efd3; background: #2a2a2bee; text-align: center; }
+.player-container h3 { margin-bottom: 0; overflow-wrap: anywhere; }
+#quest-bar { gap: 12px; flex-wrap: wrap; }
+.quest-circle { flex-shrink: 0; color: #171719; text-align: center; }
+footer { background: #2a2a2bee; padding: 18px; margin-top: 24px; font-size: 16px; }
+@media (max-width: 500px) { main { padding: 10px; } h1 { font-size: 46px; } .panel { padding: 16px; } .quest-circle { width: 55px; height: 55px; font-size: 11px; } #quest-bar { gap: 5px; } }
